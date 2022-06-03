@@ -1,13 +1,30 @@
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
   }
   
-  body {
-    background-color: #0a192f;
-    overflow-X: hidden;
   
+  body {
+   background: linear-gradient(
+     to right, #000428,
+    #004e92,#000428);
+     background-size: 400% 400%;
+     animation: animated-bg 10s infinite ease-in-out;
+  
+  }
+  @keyframes animated-bg {
+    0%{
+      background-position: 0 50%;
+
+    }
+    50%{
+      background-position: 100% 50%;
+    }
+    100%{
+      background-position: 0 50%;
+    }
   }
   body.loaded {
     margin: 20px 40px;
@@ -65,11 +82,10 @@
   header {
     display: flex;
     position: sticky;
-    background: #0a192f;
     top: 0px;
-    z-index: 10;
-    margin: 20px 10px 0px 0px;
-    align-items: center;
+    z-index: 20;
+    margin: 20px 0px 0px 0px;
+    align-items: right;
     animation: fadein 1s ease-out 0s 1;
   }
   
@@ -77,7 +93,8 @@
     max-height: 70px;
   }
   header .logo_name {
-    color: #4ec5af;
+    color: #8892b0;
+    border: 30px;;
     font-size: 25px;
     margin-left: 5px;
     font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
@@ -85,11 +102,16 @@
   }
   
   header .nav {
-    display: flex;
     margin-left: auto;
     animation: nav_load 1s ease 0s 1, fadein 4s ease 0s 1;
   }
-  
+  header .bx-menu{
+    font-size: 20px;
+    display: none;
+  }
+  header .nav ul{
+    display: flex;
+  }
   header .nav a {
     text-decoration: none;
     display: block;
@@ -104,7 +126,7 @@
   }
   
   header .nav a:hover:not(.active) {
-    color: #4ec5af;
+    color: #2a534b;
   }
   
   header .nav li a.active {
@@ -131,6 +153,7 @@
     background: #4ec5af;
   }
   
+  
   .flex-container {
     display: flex;
     margin-top: 100px;
@@ -138,7 +161,7 @@
   }
   
   .left-side {
-    flex: 20%;
+    flex: 15%;
     font-size: 30px;
     padding-top: 40px;
     align-self: flex-start;
@@ -157,15 +180,23 @@
   }
   
   .left-side ul li a:hover {
-    color: #4ec5af;
+    animation: pulsate 1s
+    ease-in-out;
   }
   
+  @keyframes pulsate{
+    0%{
+      box-shadow: 
+      0 0 25px #4ec5af,
+      0 0 50px #4e00c2;
+    }
+  }
   .left-side .vertical {
     border-left: 2px solid #8892b0;
     height: 100%;
     position: absolute;
     left: 18px;
-    bottom: -250px;
+    bottom: -310px;
   }
   
   .content {
@@ -201,19 +232,19 @@
   .content .heading:after {
     content: "";
     display: block;
-    width: 70%;
+    width: 80%;
     height: 1px;
     background: #4ec5af;
     position: absolute;
-    left: 200px;
+    left: 150px;
     top: 50%;
   }
   
   .content .aboutGrid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    
   }
-  
   .aboutGrid .profile-image img {
     height: 350px;
     width: 300px;
@@ -230,7 +261,7 @@
     width: 300px;
     border: 2px solid #29312f;
     padding: 5px;
-    margin: 100px 100px;
+    margin: 0 0 100px 100px;
     border-radius: 8px;
   }
   
@@ -294,6 +325,7 @@
   
   .project-container {
     display: flex;
+    margin: 30px 100px 30px 0px;
   }
   
   .project-container .project-image img {
@@ -338,6 +370,7 @@
   .project-desc .git-link {
     margin-left: auto;
     margin-top: 10px;
+    font-size: 30px;
   }
   
   .project-desc .git-link a {
@@ -352,7 +385,9 @@
     justify-content: center;
     margin: 30px 0 0 50px;
   }
-  
+  .contact-flex p{
+    margin: 20px 100px 20px 40px;
+  }
   .right-side {
     flex: 10%;
     color: #8892b0;
@@ -362,12 +397,12 @@
   }
   
   .right-side .gmail {
-    transform: translateX(150px) rotate(90deg);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    padding-top: 150px;
+    padding-top: 15px;
+    writing-mode: vertical-lr;
   
     position: relative;
-    right: 18px;
+    right: -65px;
   }
   
   .right-side .gmail a {
@@ -381,36 +416,20 @@
   
   .right-side .vertical {
     border-left: 2px solid #8892b0;
-    height: 300px;
-    position:absolute;
-    right: 50px;
-    bottom: -350px;
-  }
-  :root{
-      --primary-color: #0a192f;
-      --primary-color-hover:#12243f;
-      --secondary-color:#0a192f;
-      --secondary-color-hover: #0b182c;
-  }
-  .content a.btn-primary{
+    writing-mode: vertical-lr;
 
-    background: var(--primary-color);
+    height: 250px;
+    position:relative;
+    right: -70px;
+    bottom: -10px;
   }
-  .content a.btn-primary:hover{
-   background: var(--primary-color-hover);
-  }
-  .btn-secondary{
-   background: var(--secondary-color);
-  }
-  .btn-secondary:hover{
-   background: var(--secondary-color-hover);
-  }
+  
   .btn{
     color:#4ec5af;
     text-decoration: none;
     position:relative;
     font-size: 25px;
-    padding:20px 50px;
+    padding:10px 30px;
     text-decoration: none;
     display: inline-block;
     border:3px solid #4ec5af;
@@ -441,3 +460,164 @@
     width: calc(100% + 27px);
     height: calc(100% + 27px);
   }
+.icon{
+  font-size: 34px;
+
+}
+.icons-wrapper ul li {
+  display: inline-block;
+  list-style-type: none;
+ margin-top: 100px;
+  padding: 5px;
+  align-items: center;
+}
+
+.icons-wrapper ul li a {
+  text-decoration: none;
+  color: #8892b0;
+}
+.icons-wrapper ul li a:hover {
+  animation: pulsate 1s
+  ease-in-out;
+}
+
+@keyframes pulsate{
+  0%{
+    box-shadow: 
+    0 0 50px #009ec2,
+    0 0 25px #4ec5af;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+  @media only screen and (max-width: 600px){
+   .right-side{display: none;}
+   
+   content{
+      max-width: 100%;
+      margin:0px;
+    }
+
+    body.loaded{
+      margin: 10px;
+    }
+
+    #home h1{
+      font-size: 40px;
+    }
+    .content .heading:after{
+      width: 60%;
+    }
+    .content-flex p{
+      margin-right: 0px;
+    }
+    .bottom-link ul {
+      display: flex;
+    }
+    
+    header #menu{
+      z-index:2;
+    }
+    header #menu-bar{
+      width: 45px;
+      height: 40px;
+      margin: 40px -170px 20px 170px;
+      cursor: pointer;
+
+    }
+    header .bar{
+    
+      height: 5px;
+      width: 100%;
+      background-color: white;
+      display: block;
+      border-radius:5px;
+      transition: 0.3 ease;
+    }
+    header #bar1{
+      transform: translateX(2px);    }
+    header #bar2{
+      transform: translateX(2px);    }
+  
+    header #bar3{
+      transform: translateX(2px);
+    }
+
+    header .nav{
+    transition: 0.3s ease;
+    display: none;
+   
+  }  
+  header .nav ul{
+    padding: 0;
+    margin: 0 -200px 0 0px;
+    width: 200px;
+    height: 150px;
+    display: block;
+    
+  }
+  header .nav li{
+    padding: 7px 5px;
+    float: left;
+    margin: 0 0 0 0;
+   
+  }
+  
+  header .nav li a{
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+    
+
+  }
+  header .nav li a:hover{
+    font-weight: bold;
+
+  }
+  header .menu-bg, #menu{ 
+    top: 0;
+    right:0;
+    position: absolute;
+  }
+  header .menu-bg{
+    z-index: -1;
+    background: radial-gradient(circle, #29312f,#29312f);
+    border-radius: 60% 0 0 60%;
+    width: 0;
+    height: 0;
+    transition: 0.3s ease;
+  }
+  header .change{
+    display: block;
+  }
+  header .change .bar {
+    background-color: antiquewhite;
+  }
+  header .change #bar1{
+    transform: translateY(6px)
+    rotateZ(45deg);
+  }
+  header .change #bar2{
+    opacity: 0;
+
+  }
+  header .change #bar3{
+    transform: translateY(-1px)
+    rotateZ(-45deg);
+  }
+  header .change-bg{
+    top: 0;
+    width: 355px;
+    height: 600px;
+    transform: translate(60%,-3%);
+  }
+
+}
