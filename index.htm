@@ -18,7 +18,15 @@
     <header>
       <div class="logo"><img src="images\V.gif" alt="logo" /></div>
       <div class="logo_name">Vivek Kumar Sahu</div>
-      <div class="nav">
+      <div id="menu">
+        <div id="menu-bar"
+        onclick="menuOnClick()">
+        <div id="bar1" class="bar"></div>
+        <div id="bar2" class="bar"></div>
+        <div id="bar3" class="bar"></div>
+      </div>
+  
+      <div class="nav" id="nav">
         <ul>
           <li><a class="home active" href="#00">HOME</a></li>
           <li><a class="about" href="#01">ABOUT</a></li>
@@ -28,11 +36,19 @@
           <li><a class="contact" href="#05">CONTACT</a></li>
         </ul>
       </div>
+      </div>
+      <div class="menu-bg" id="menu-bg"></div>
+      <script src="js/menu.js"></script>
     </header>
 
     <div class="flex-container">
       <div class="left-side">
         <ul>
+          <li>
+            <a href="https://www.facebook.com/king.vivek.338/"
+              ><i class='bx bxl-facebook-circle'></i>
+            </a>
+          </li>
           <li>
             <a href="https://github.com/20vivek"
               ><i class="bx bxl-github"></i
@@ -42,12 +58,12 @@
             <a href="https://www.linkedin.com/in/vivek-sahu-28467b184/"><i class="bx bxl-linkedin-square"></i></a>
           </li>
           <li>
-            <a href="#instagram"><i class="bx bxl-instagram"></i></a>
+            <a href="https://www.instagram.com/vivek.k.sahu/"><i class="bx bxl-instagram"></i></a>
           </li>
           <li>
-            <a href="#gmail"><i class="bx bx-envelope"></i></a>
+            <a href="mailto:2.0viveksahu@gmail.com"><i class="bx bx-envelope"></i></a>
           </li>
-          <li style="font-size: 19px; margin-left: 2px">
+          <li style="font-size: 19px;">
             <a style="text-decoration: none" href="#cv">CV</a>
           </li>
         </ul>
@@ -84,15 +100,15 @@
                 Hello! My name is Vivek, Currently I am doing my graduation in
                 computer science and engineering from Shri Shankaracharya
                 Technical Campus (Bhilai). I will be completing my graduation
-                this year i.e 2022.
+                this year i.e 2022.</p>
                 <br />
                 <br />
-                My main focus these days is building responsive websites and
+                <p>>My main focus these days is building responsive websites and
                 hence I am learning various CSS technologies like flexbox, CSS
-                grids etc for responsive web design.
+                grids etc for responsive web design.</p>
                 <br />
                 <br />
-                Also my next plan is to learn DBMS, APIs and various backend
+                <p>Also my next plan is to learn DBMS, APIs and various backend
                 technologies like php, AWS, java or python.
               </p>
             </div>
@@ -231,11 +247,37 @@
             </p>
             <a
               class=" btn btn-secondary" href="mailto:2.0viveksahu@gmail.com">Say Hello</a>
+              <div class="icons-wrapper">
+                <ul>
+                  <li>
+                    <a href="https://www.facebook.com/king.vivek.338/"
+                      ><i class="bx bxl-facebook-circle icon "></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/20vivek"
+                      ><i class="bx bxl-github icon"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a href="https://www.linkedin.com/in/vivek-sahu-28467b184/">
+                     <i class="bx bxl-linkedin-square icon"></i></a>
+                  </li>
+                  <li>
+                    <a href="https://www.instagram.com/vivek.k.sahu/">
+                      <i class="bx bxl-instagram icon"></i></a>
+                  </li>
+                  <li>
+                    <a href="mailto:2.0viveksahu@gmail.com">
+                      <i class="bx bx-envelope icon"></i></a>
+                  </li>
+                </ul>
+            </div>
           </div>
         </section>
-        <br /><br /><br /><br /><br /><br /><br /><br /><br />
+        <br><br>
         <h5 style="text-align: center;color: #ccd6f6">
-          Created by Vivek Sahu.<br />Inspired by Brittany Chiang.
+          Created by Vivek Sahu.<br /><br> by Brittany Chiang.
         </h5>
       </div>
 
@@ -249,3 +291,4 @@
     <script src="js/scroll.js"></script>
   </body>
 </html>
+
